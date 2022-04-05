@@ -1,8 +1,9 @@
 class Point:
 
-    def __init__(self, x, y):
+    def __init__(self, x, y, t="a"):
         self.x = x/1.0
         self.y = y/1.0
+        self.t = t
         # self.y = 240-y/1.1
 
     def __str__(self):
@@ -15,6 +16,8 @@ class BezierQuad:
         self.p1 = p1
         self.p2 = p2
         self.p3 = p3
+        self.pred = None
+        self.succ = None
     
     def  p(self, p):
 

@@ -10,7 +10,7 @@ class Handle:
         self.type = t
         self.holding = False
         self.press = False
-    
+
     def draw(self):
         if self.type == 'A':
             pyxel.rect(self.gx, self.gy, self.size, self.size, 10)
@@ -24,6 +24,7 @@ class Handle:
                 self.offsetX = pyxel.mouse_x - self.p.x
                 self.offsetY = pyxel.mouse_y - self.p.y
                 self.holding = True
+                print(id(self))
 
         if self.holding:
             self.updatePos()

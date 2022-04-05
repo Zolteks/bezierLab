@@ -4,6 +4,7 @@ from handle import Handle
 from bezier import *
 from bezierPlot import Plotter
 from aFewQuads import AFewQuads
+from spline import Spline
 
 class BezierLab:
 
@@ -23,9 +24,8 @@ class BezierLab:
         self.bezier = BezierQuad(self.a,self.b,self.c,self.d)
         self.points = 4
         self.plotters = []
-        for quad in AFewQuads.list:
+        for quad in Spline().list:
             self.plotters.append(Plotter(quad))
-        # self.plotters.append(Plotter(self.bezier))
         pyxel.run(self.update,self.draw)
 
     def draw(self):
