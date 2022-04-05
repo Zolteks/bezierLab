@@ -18,7 +18,7 @@ class Plotter:
         prec = self.quad.p0
         step = 1/numSegs
         for seg in range(1, numSegs+1):
-            p0 = self.quad.p(seg * step)
+            p0 = self.quad.polyP(seg * step)
             pyxel.line(p0.x, p0.y, prec.x, prec.y, 13)
             prec = p0
 

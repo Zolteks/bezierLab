@@ -23,9 +23,9 @@ class BezierLab:
         self.d = Point(200,40)
         self.bezier = BezierQuad(self.a,self.b,self.c,self.d)
         self.points = 4
-        self.plotters = []
-        for quad in Spline().list:
-            self.plotters.append(Plotter(quad))
+        self.plotters = [Plotter(self.bezier)]
+        # for quad in Spline().list:
+        #     self.plotters.append(Plotter(quad))
         pyxel.run(self.update,self.draw)
 
     def draw(self):
@@ -47,6 +47,5 @@ class BezierLab:
             self.points += 1
         if pyxel.btnp(pyxel.KEY_PAGEDOWN):
             if self.points > 1:self.points -= 1
-
 
 BezierLab()
